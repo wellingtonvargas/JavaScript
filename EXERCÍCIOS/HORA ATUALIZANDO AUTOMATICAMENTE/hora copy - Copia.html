@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    <div id="data-hora"></div>
+    <script>
+
+        // Cria intervalo
+        const interval = setInterval(() => {
+            // Pega o horário atual
+            const now = new Date();
+
+            // Formata a data conforme dd/mm/aaaa hh:ii:ss
+            const dataHora = (now.getUTCDate()) + '/' + ((now.getMonth() + 1)) + '/' + now
+                .getFullYear() + ' ' + (now.getHours()) + ':' + (now.getMinutes()) + ':' +
+                (now.getSeconds());
+
+            // Exibe na tela usando a div#data-hora
+            document.getElementById('data-hora').innerHTML = dataHora;
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

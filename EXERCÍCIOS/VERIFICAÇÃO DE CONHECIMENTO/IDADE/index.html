@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Exercícios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1> Colocando Imagem com Gênero </h1>
+    </header>
+    <section>
+        <div>
+            <p> Sexo:
+                <select name="sexo" id="sexo" onchange="gerarfetaria()" >
+                    <option ></option>
+                    <option value="masculino" id="masculino"> masculino </option>
+                    <option value="feminino" id="feminino"> feminino </option>
+                </select>
+            Classificação etária:
+                <select name="fetaria" id="fetaria" onchange="gerarImagem()">
+<!--                    <option ></option>
+                    <option value="bebe" id="bebe">Bebê</option>
+                    <option value="jovem" id="jovem"> Jovem</option>
+                    <option value="adulto" id="adulto"> Adulto </option>
+                    <option value="idoso" id="idoso"> Idoso</option>
+-->
+                </select>
+                
+                
+            </p>
+        </div>
+        <div id="res" >
+            
+        </div>
+    </section>
+    <footer>
+        <p> &copy; Vargas</p>
+    </footer>
+    <script src="script.js"></script>
+    
+</body>
+</html>

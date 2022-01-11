@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste onchange</title>
+    <style>
+        img {
+            clip-path: circle(50% at 50% 50%);
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        SEXO:
+        <input type="radio" name="radsex" id="mas" checked>
+        <label for="fsex"> Masculino </label>
+        <input type="radio" name="radsex" id="fem">
+        <label for="fem">Feminino </label>
+    </p>
+    
+
+
+    <select id="linguagens">
+        <option value="1"> bebe </option>
+        <option value="2"> jovem </option>
+        <option value="3"> adulto </option>
+        <option value="4"> idoso </option>
+    </select>
+
+    <p> <input type="button" value="Mostrar Imagem" id="mostrarimg" onclick="mostrarimg()"></p>
+
+    <div id="res">
+
+    </div>
+    
+    <script>
+        var linguagens = document.getElementById('linguagens')
+        var res = document.getElementById('res')
+        var img = document.createElement('img')
+        var fsex = document.getElementsByName('radsex')
+        var gênero = ''
+        img.setAttribute('id', 'foto')
+        //res.innerHTML = ''
+
+        function mostrarimg() {
+            if(fsex[0].checked){
+                gênero = 'Masculino'
+                
+                linguagens.addEventListener("change", function() {
+                var options = this.options
+                var itemAtual = this.selectedIndex
+                
+                if(this.value == 1) {
+                    img.setAttribute('src', 'imagem/bebe-m.jpg')
+                } else if(this.value == 2) {
+                    img.setAttribute('src', 'imagem/jovem-m.jpg')
+                } else if(this.value == 3) {
+                    img.setAttribute('src', 'imagem/adulto-m.jpg')
+                }else if(this.value == 4) {
+                    img.setAttribute('src', 'imagem/idoso-m.jpg')
+                }
+                res.innerHTML = `<p> Foi selecionado ${options[itemAtual].text} - ${gênero} </p>`
+
+                } )
+                
+                res.appendChild(img)
+
+            } else if(fsex[1].checked){
+                gênero = 'Feminino'
+                //res.innerHTML = ''
+                linguagens.addEventListener("change", function() {
+                var options = this.options
+                var itemAtual = this.selectedIndex
+                
+                if(this.value == 1) {
+                    img.setAttribute('src', 'imagem/bebe-f.jpg')
+                } else if(this.value == 2) {
+                    img.setAttribute('src', 'imagem/jovem-f.jpg')
+                } else if(this.value == 3) {
+                    img.setAttribute('src', 'imagem/adulto-f.jpg')
+                }else if(this.value == 4) {
+                    img.setAttribute('src', 'imagem/idoso-f.jpg')
+                }
+                res.innerHTML = `<p> Foi selecionado ${options[itemAtual].text} - ${gênero} </p>`
+
+                } )
+                res.appendChild(img)
+
+            }
+            
+            
+
+
+        }
+
+        
+            linguagens.addEventListener("change", function() {
+               
+
+            } ) 
+
+    </script>
+
+
+</body>
+</html>

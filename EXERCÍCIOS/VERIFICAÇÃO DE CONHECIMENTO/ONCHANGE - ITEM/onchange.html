@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <!-- DESTA MANEIRA VOCE PEGA O VALOR -->
+
+    <select onchange="minhaFuncao(this.value)">
+        <option value="1">JavaScript</option>
+        <option value="2"> Python</option>
+        <option value="3"> C# </option>
+    </select>
+
+
+ <!-- DESTA MANEIRA VOCE PEGA O QUE TA ESCRITO -->   
+
+    <select onchange="Funcao(this.value)">
+        <option ">JavaScript</option>
+        <option > Python</option>
+        <option > C# </option>
+    </select>
+
+
+
+    <div id="res">
+
+    </div>
+
+    <script>
+        function minhaFuncao(valor) {
+            res.innerHTML = `<p> ${valor} </p> `
+        }
+
+        function Funcao(valor) {
+            res.innerHTML += `<p> ${valor} </p> `
+        }
+        
+    </script>
+    
+</body>
+</html>
